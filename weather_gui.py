@@ -99,13 +99,6 @@ class WeatherDashboard(tk.Frame):
         image_label.pack()
 
 
-class WeatherWebApp(object):
-    def __init__(self, report):
-        self.report = report
-        self.sol = self.report.name
-
-
-
 
 # def display_font(self):
 #     frame = tk.Frame()

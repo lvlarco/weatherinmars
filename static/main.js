@@ -1,4 +1,4 @@
-z/*
+/*
 	Eventually by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -36,10 +36,13 @@ z/*
 
 					// Images (in the format of 'url': 'alignment').
 						images: {
-							'../static/.jpg': 'center',
-							"../static/mars_background.jpg": 'center',
-							'static/bg03.jpg': 'center'
 							
+							'static/bg01.jpg': 'center',
+							'static/mars_background.jpg': 'center',
+							'static/bg03.jpg': 'center'
+							// 'images/bg01.jpg': 'center',
+							// 'images/bg02.jpg': 'center',
+							// 'images/bg03.jpg': 'center'
 						},
 
 					// Delay.
