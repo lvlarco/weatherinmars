@@ -37,9 +37,9 @@
 					// Images (in the format of 'url': 'alignment').
 						images: {
 							
-							'static/bg01.jpg': 'center',
+							'static/curiosity.jpg': 'center',
 							'static/mars_background.jpg': 'center',
-							'static/bg03.jpg': 'center'
+//							'https://mars.nasa.gov/embed/21472/': 'center'
 							// 'images/bg01.jpg': 'center',
 							// 'images/bg02.jpg': 'center',
 							// 'images/bg03.jpg': 'center'

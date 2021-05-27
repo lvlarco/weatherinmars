@@ -21,7 +21,7 @@ section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: center; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -100,7 +100,7 @@ body {
   -ms-justify-content: center;
   justify-content: center;
   background-color: #000;
-  padding: 6em 4em 4em 4em; }
+  padding: 5em 4em 3.5em 4em; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -115,13 +115,13 @@ body {
     z-index: 2; }
   @media screen and (max-width: 1680px) {
     body {
-      padding: 6em 3.5em 3.5em 3.5em; } }
+      padding: 5em 3.5em 3em 3.5em; } }
   @media screen and (max-width: 736px) {
     body {
-      padding: 5em 2em 2em 2em; } }
+      padding: 3em 2em 1.75em 2em; } }
   @media screen and (max-width: 360px) {
     body {
-      padding: 5em 1.25em 1.25em 1.25em; } }
+      padding: 3em 1.25em 1em 1.25em; } }
 
 /* BG */
 #bg {
@@ -249,20 +249,22 @@ body {
   float: right;
   width: 50%;
   flex-wrap: wrap;
+  display: flex;
   align-items: center;
+  height: 100%;
 }
 .location-and-date {  
   width: 100%;
-  height: 35vh;
-  /* border: 3px solid blue;  */
+  /* height: 35vh; */
+  flex-grow: 4;
   justify-content: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }  
 .location-and-date__location {
-  font-size: 5em;
-  font-weight: 550;
+  /* font-size: 5.5em;
+  font-weight: 500; */
   margin: auto;
   text-align: center;
 }
@@ -271,52 +273,62 @@ body {
   height: 0;
 }
 .current-temperature {  
-  /* border: 3px solid yellow; */
   width: 100%;
-  height: 25vh;
-  flex-wrap: wrap;
+  /* height: 35vh; */
+  flex-grow: 3.25;
   justify-content: center;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
 }  
 .current-temperature__icon-container {  
-  /* flex-grow: 0.75;   */
-  width: 40%;
-  text-align: right;  
+  flex-grow: 1;  
+  /* width: 40%; */
+  text-align: right;
+  height: 100%;
+  margin: auto;
 }
 .current-temperature__icon {  
   width: 6em; 
 }
 .current-temperature__content-container {  
   flex-grow: 2;  
-  text-align: center;  
+  text-align: center;
+  height: 100%;
+  /* justify-content: center; */
+  display: block;
+  margin: auto;
+  /* align-items: center;
+  flex-wrap: wrap; */
 }  
 .current-temperature__value {  
   font-size: 5.25em;  
-  font-weight: 300;  
-  height: 65px;
-  vertical-align: bottom; 
-  padding-top: 15px;
+  padding: 0.5em 0 0.5em 0;
+  /* font-weight: 300;   */
+  /* height: 65px; */
+  /* vertical-align: bottom;  */
+  /* padding-top: 15px; */
 }
 .current-temperature__summary {  
   /* margin-top: -0.5em;  
   margin-left: -0.6em;   */
-  font-size: 1.125em;  
-  height: 30px;
-  vertical-align: top;
-  padding-top: 10px;
+  font-size: 1.5em;  
+  /* height: 30px; */
+  /* vertical-align: top; */
+  padding: 0.25em 0 0.25em 0;
 }
 .current-stats {  
   width: 100%;
-  height: 15vh;
+  font-size: 1.5em;
+  /* height: 15vh; */
   /* border: 3px solid red;  */
   /* display: flex; */
-
   justify-content: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  flex-grow: 2;
 
 }
 
@@ -324,7 +336,7 @@ body {
 
 /* Type */
 body, input, select, textarea {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.616);
   font-family: "Roboto", sans-serif;
   font-size: 16pt;
   font-weight: 400;
@@ -370,16 +382,17 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #fff;
-  font-weight: 700;
-  line-height: 1em;
-  margin: 0 0 1em 0; }
+  color: rgba(255, 255, 255, 0.616);
+  /* font-weight: 550; */
+  line-height: normal;
+  margin: 0 0 0 0; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: inherit;
     text-decoration: none; }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 5.5em;
+  font-weight: 550;
   line-height: 1.25em; }
 
 h2 {
@@ -387,7 +400,8 @@ h2 {
   line-height: 1.5em; }
 
 h3 {
-  font-size: 1.35em;
+  font-size: 1.5em;
+  font-weight: 200;
   line-height: 1.5em; }
 
 h4 {

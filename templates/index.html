@@ -19,11 +19,11 @@
 				<div class='left-column'></div>
 				<div class='right-column'>
 				<div class="location-and-date">
-					<div class="location-and-date__location">Sol</div>
+					<h1 class="location-and-date__location">Sol</h1>
 					<div class="break"></div>
-					<div class="location-and-date__location">{{sol}}</div>
+					<h1 class="location-and-date__location">{{sol}}</h1>
 					<div class="break"></div>
-					<div text-align="center" font-size="1em">{{terrestrial_date}}</div>
+					<h3 text-align="center" vertical-align="middle">{{terrestrial_date}}</h3>
 				</div>
 				
 				<div class="current-temperature">
@@ -31,8 +31,9 @@
 						<img src="{{ url_for('static', filename='sun.png') }}" class="current-temperature__icon" alt="">  
 					</div>  
 					<div class="current-temperature__content-container">  
-						<div class="current-temperature__value">{{min_temp}}°</div>  
-						<div class="current-temperature__summary">{{atmo_opacity}}</div>  
+						<div class="current-temperature__value">{{max_temp}}°</div>
+						<div class="current-temperature__summary">{{atmo_opacity}}</div>
+						<h3>Low {{min_temp}}°</h3>
 					</div>    
 				</div>  
 				
@@ -47,13 +48,12 @@
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="https://wwww.linkedin.com/in/lvlarco" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/lvlarco" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="mailto:marco.campos.miranda@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy;WeatherInMars</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</footer>
 
