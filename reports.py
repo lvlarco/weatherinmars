@@ -9,7 +9,7 @@ class SolReport(object):
     def __init__(self, sol, report):
         self.sol = sol
         self.report = report
-        self.json_file = r'resources/historical_reports.json'
+        self.json_file = r'./resources/historical_reports.json'
         self.min_temp = None
         self.max_temp = None
         self.pressure = None
@@ -39,7 +39,7 @@ class SolReport(object):
             return ''
         else:
             d = datetime.strptime(self.terretrial_date, '%Y-%m-%dT%H:%M:%S.000Z')
-            return datetime.strftime(d, '%d %b, %Y')
+            return datetime.strftime(d, '%d %b %Y')
 
     def create_report_table(self):
         """Creates a dataframe table of all parameters of the report"""
@@ -77,7 +77,7 @@ class SolReport(object):
         with open(self.json_file, mode='r') as f:
             j_report = json.load(f)
         for j in j_report:
-            if self.sol in j:
+            if str(self.sol) in list(j.keys())[0]:
                 return True
 
     def save_report(self, data, file_type='json'):
@@ -90,11 +90,11 @@ class SolReport(object):
             with open(self.json_file) as feedsjson:
                 feeds = json.load(feedsjson)
             if self.check_existing_sol() is not True:
-                print("New entry for {} Sol".format(self.sol))
+                print("New entry in json for Sol {}".format(self.sol))
                 if isinstance(feeds, dict):
                     feeds = [feeds]
                 feeds.append(data)
                 with open(self.json_file, mode='w') as f:
                     f.write(json.dumps(feeds, indent=2))
             else:
-                print("This Sol entry already exists")
+                print("Sol {} already exists in json".format(self.sol))
