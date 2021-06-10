@@ -127,7 +127,7 @@ class WeatherDashboard(tk.Frame):
 
     def init_temps_canvas(self):
         """Canvas to display Max and Min temps, atmo opacity"""
-        x_off, y_off = (-80, 50)
+        x_off, y_off = (-90, 50)
         off_center = 1
         anchor_p = self.p2
         # Temps
@@ -149,7 +149,7 @@ class WeatherDashboard(tk.Frame):
 
     def init_suntime_canvas(self):
         """Creates canvas text for Sunset and Sunrise times"""
-        x_off, y_off = (-80, -12)
+        x_off, y_off = (-90, -12)
         off_center = 6
         anchor_p = self.p4
         # Sunrise/Sunset
@@ -257,7 +257,7 @@ class WeatherDashboard(tk.Frame):
         self.master.ftoc_img = ImageTk.PhotoImage(Image.open('resources/ftoc.JPG').resize((img_size, img_size)))
         self.master.ctof_img = ImageTk.PhotoImage(Image.open('resources/ctof.JPG').resize((img_size, img_size)))
         self.uom_btn.configure(activebackground="#33B5E5", relief='flat', image=self.master.ftoc_img)
-        self.canvas.create_window(self.p2[0] - 15, self.p2[1] + 82, anchor=SW, window=self.uom_btn)
+        self.canvas.create_window(self.p2[0] - 25, self.p2[1] + 82, anchor=SW, window=self.uom_btn)
 
     def update_temps(self):
         """Updates the corresponding UoM temperature in UI"""
