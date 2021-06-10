@@ -1,7 +1,9 @@
-from weather_gui import WeatherDashboard
-from reports import SolReport
+# -*- coding: utf-8 -*-
+
+# from weather_gui import WeatherDashboard
+# from reports import SolReport
 from requests.exceptions import RequestException
-import tkinter as tk
+# import tkinter as tk
 import requests
 import xmltodict
 

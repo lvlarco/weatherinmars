@@ -321,5 +321,6 @@ if __name__ == '__main__':
     metadata_df = sr.create_report_table()
     # sr.save_report(sr.create_report_dict(), file_type='json')
     root = tk.Tk()
+    root.attributes('-fullscreen', True)
     WeatherDashboard(root, metadata_df)
     root.mainloop()
