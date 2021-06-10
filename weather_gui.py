@@ -127,7 +127,7 @@ class WeatherDashboard(tk.Frame):
 
     def init_temps_canvas(self):
         """Canvas to display Max and Min temps, atmo opacity"""
-        x_off, y_off = (-90, 50)
+        x_off, y_off = (-95, 50)
         off_center = 1
         anchor_p = self.p2
         # Temps
@@ -136,12 +136,12 @@ class WeatherDashboard(tk.Frame):
                                                        text='{}°'.format(self.max_temp.get()),
                                                        font=(FONT, 50, 'bold'),
                                                        fill=COLOR1)
-        self.canvas.create_text(anchor_p[0] + x_off + 15, anchor_p[1] + y_off + 85 + 12,
+        self.canvas.create_text(anchor_p[0] + x_off + 15, anchor_p[1] + y_off + 72 + 12,
                                 anchor=SW,
                                 text='LOW',
                                 font=(FONT, 6, 'bold'),
                                 fill=COLOR2)
-        self.min_temp_canvas = self.canvas.create_text(anchor_p[0] + x_off, anchor_p[1] + y_off + 85,
+        self.min_temp_canvas = self.canvas.create_text(anchor_p[0] + x_off, anchor_p[1] + y_off + 72,
                                                        anchor=CENTER,
                                                        text='{}°'.format(self.min_temp.get()),
                                                        font=(FONT, 18, 'bold'),
@@ -149,18 +149,18 @@ class WeatherDashboard(tk.Frame):
 
     def init_suntime_canvas(self):
         """Creates canvas text for Sunset and Sunrise times"""
-        x_off, y_off = (-90, -12)
+        x_off, y_off = (-95, -12)
         off_center = 6
         anchor_p = self.p4
         # Sunrise/Sunset
 
-        self.canvas.create_text(anchor_p[0] + x_off, anchor_p[1] + y_off - 29,
+        self.canvas.create_text(anchor_p[0] - 100, anchor_p[1] + y_off - 29,
                                 anchor=SE,
                                 text='SUNRISE',
                                 font=(FONT, 8, 'bold'),
                                 fill=COLOR2)
 
-        self.canvas.create_text(anchor_p[0] + x_off, anchor_p[1] + y_off,
+        self.canvas.create_text(anchor_p[0] - 100, anchor_p[1] + y_off,
                                 anchor=SE,
                                 text=self.report.sunrise,
                                 font=(FONT, 22, 'bold'),
