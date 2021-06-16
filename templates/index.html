@@ -16,41 +16,55 @@
 
 		<!-- Main -->
 			<main class="main-container">  
-				<div class='left-column'></div>
-				<div class='right-column'>
-				<div class="location-and-date">
-					<h1 class="location-and-date__location">Sol</h1>
-					<div class="break"></div>
-					<h1 class="location-and-date__location">{{sol}}</h1>
-					<div class="break"></div>
-					<h3 text-align="center" vertical-align="middle">{{terrestrial_date}}</h3>
+				<div class='left-column'>
+					<div class='location'>
+						<h3>Gale Crater,</h3>
+						<h1>MARS</h1>
+						<h3><br/>{{terrestrial_date}}</h3>
+					</div>
+					<div class="sol-container">
+						<div class='infoblock-left'>
+							<h3>SOL</h3>
+							<h2>{{sol}}</h2>
+						</div>
+					</div>
 				</div>
-				
-				<div class="current-temperature">
-					<div class="current-temperature__icon-container">  
-						<img src="{{ url_for('static', filename='sun.png') }}" class="current-temperature__icon" alt="">  
+				<div class='middle-column'></div>
+				<div class='right-column'>
+					<div class="temperature-container">
+						<div class='temperature_conversion-container'>
+							<a href='/convert-to-f'>F</a> |
+							<a href='/convert-to-c'>C</a>
+							<h1>{{max_temp}}°</h1>
+						</div>
+						<div class="temperature__atmo-container">
+							<img src="{{ url_for('static', filename='sun.png') }}" class="temperature__icon" alt="">
+							<h5>{{atmo_opacity}}</h5>
+							<div class='infoblock-right'>
+								<h6>{{min_temp}}°</h6>
+								<h7>LOW</h7>
+							</div>
+						</div>
 					</div>  
-					<div class="current-temperature__content-container">  
-						<div class="current-temperature__value">{{max_temp}}°</div>
-						<div class="current-temperature__summary">{{atmo_opacity}}</div>
-						<h3>Low {{min_temp}}°</h3>
-					</div>    
-				</div>  
-				
-				<div class="current-stats">Sunrise {{sunrise_time}}
-						<br />Sunset {{sunset_time}}
-				</div>  
-			</div>
-				 
-				
+					<div class="suntime-container">
+						<div class='infoblock-right'>
+							<h4>{{sunset_time}}</h4>
+							<h5>SUNSET</h5>
+						</div>
+						<div class='infoblock-right'>
+							<h4>{{sunrise_time}}</h4>
+							<h5>SUNRISE</h5>
+						</div>
+					</div>  
+				</div>
 			</main>
 
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="https://wwww.linkedin.com/in/lvlarco" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
-					<li><a href="https://github.com/lvlarco" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="mailto:marco.campos.miranda@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="https://linkedin.com/in/lvlarco" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/lvlarco/weatherinmars" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://lvlarco.github.io/contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
 					<li>&copy;WeatherInMars</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
