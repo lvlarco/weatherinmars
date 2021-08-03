@@ -6,7 +6,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, h7, p, blockquote,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
@@ -115,13 +115,13 @@ body {
     z-index: 2; }
   @media screen and (max-width: 1680px) {
     body {
-      padding: 5em 6em 3em 6em; } }
+      padding: 5em 6em 3.25em 6em; } }
   @media screen and (max-width: 736px) {
     body {
-      padding: 4em 3.5em 1.75em 3.5em; } }
+      padding: 4em 3.5em 2em 3.5em; } }
   @media screen and (max-width: 360px) {
     body {
-      padding: 3em 2em 1em 2em; } }
+      padding: 3em 2em 1.5em 2em; } }
 
 /* BG */
 #bg {
@@ -237,7 +237,7 @@ body {
 }
 .left-column {
   display: flex;
-  flex-basis: 50%;
+  flex-basis: 55%;
   flex-wrap: nowrap;
   flex-direction: column;
   background-color: transparent;
@@ -254,20 +254,32 @@ body {
   flex-direction: column-reverse;
   align-items:flex-start;
   width: 100%;
-  padding: 0 0 0 0;
+  padding: 0 0 70px 0;
 }  
 .infoblock-left {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: flex-end;
-  margin: 1em 1em 1em 0em;
+  margin: 0em 0.75em 0em 0em;
+}
+.sol-date-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+#date {
+  display: flex;
+  font-size: 0.35em;
+  line-height: 0.9;
+  justify-content: flex-end;
+  align-content: flex-end;
 }
 .middle-column {
   flex-basis: 25%;
 }
 .right-column{
   background-color: transparent;
-  flex-basis: 25%;
+  flex-basis: 20%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -279,17 +291,21 @@ body {
   flex-direction: column;
   flex-grow: 2;
   justify-content: flex-start;
-  text-align: right;
+  text-align: center;
   vertical-align: top;
 } 
 .temperature_conversion-container {
-  margin: 0 0 3em 0;
+  text-align: right;
+  margin: 0 0 1em 0;
+}
+.temperature_conversion-container hover {
+  opacity: 1;
 }
 .temperature__atmo-container {  
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 1.25em;
   font-weight: 200;
   margin: 2em 0 2em 0;
@@ -298,27 +314,37 @@ body {
   margin: 1em 0.5em 1em 0.5em;
 } 
 .temperature__icon {  
-  width: 2em; 
+  width: 4em; 
+}
+.season-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
+  padding: 0 0 0 0;
 }
 .suntime-container {  
   display: flex;
   flex-grow: 1;
   flex-direction: row-reverse;
+  justify-content: flex-start;
   width: 100%;
   flex-wrap: nowrap;
+  padding: 0 0 70px 0;
 }
 .infoblock-right {
   display: flex;
   flex-direction: column-reverse;
   justify-content:right;
   align-items: flex-end;
-  margin: 1em 0em 1em 1em;
-}
-.block-main {
-  font-size: 1em;
+  margin: 0em 0em 0em 0.5em;
 }
 .block-secondary {
-  font-size: 1em;
+  font-size: 0.35em;
+  opacity: 0.7;
+  line-height: 0.9;
 }
 /* Type */
 body, input, select, textarea {
@@ -333,16 +359,16 @@ body, input, select, textarea {
       font-size: 12pt; } }
   @media screen and (max-width: 1280px) {
     body, input, select, textarea {
-      font-size: 11pt; } }
+      font-size: 12pt; } }
   @media screen and (max-width: 980px) {
     body, input, select, textarea {
-      font-size: 11pt; } }
+      font-size: 12pt; } }
   @media screen and (max-width: 736px) {
     body, input, select, textarea {
-      font-size: 10pt; } }
+      font-size: 9.5pt; } }
   @media screen and (max-width: 480px) {
     body, input, select, textarea {
-      font-size: 10pt; } }
+      font-size: 9pt; } }
 
 a {
   -moz-transition: border-bottom-color 0.2s ease, color 0.2s ease;
@@ -365,14 +391,14 @@ em, i {
   font-style: italic; }
 
 p {
-  margin: 0 0 2em 0; }
+  margin: 0 0 0 0; }
 
-h1, h2, h3, h4, h5, h6, h7 {
+h1, h2, h3, h4, h5, h6 {
   color: rgba(255, 255, 255, 0.616);
   font-weight: 550;
   line-height: normal;
   margin: 0 0 0 0; }
-  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h7 a {
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: inherit;
     text-decoration: none; }
 
@@ -386,23 +412,19 @@ h2 {
   line-height: 1em; }
 
 h3 {
-  font-size: 2.25em;
-  line-height: 1em; }
-
-h4 {
   font-size: 3em;
   line-height: 1em; }
 
-h5 {
-  font-size: 1.25em;
+h4 {
+  font-size: 2.25em;
   line-height: 1em; }
 
-h6 {
+h5 {
   font-size: 1.5em;
   line-height: 1em; }
 
-h7 {
-  font-size: 1em;
+h6 {
+  font-size: 1.25em;
   line-height: 1em; }
 
 /* Icon */
@@ -624,7 +646,7 @@ select {
   -webkit-transition: opacity 0.5s ease-in-out;
   -ms-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
-  bottom: 4em;
+  bottom: 3.25em;
   color: rgba(255, 255, 255, 0.5);
   left: 4em;
   opacity: 0.5;
@@ -653,15 +675,15 @@ select {
     margin-bottom: 0; }
   @media screen and (max-width: 1680px) {
     #footer {
-      bottom: 3em;
+      bottom: 3.25em;
       left: 6em; } }
   @media screen and (max-width: 736px) {
     #footer {
-      bottom: 1.75em;
+      bottom: 2em;
       left: 3.5em; } }
   @media screen and (max-width: 360px) {
     #footer {
-      bottom: 1em;
+      bottom: 1.5em;
       left: 2em; } }
   @media screen and (max-height: 640px) {
     #footer {
@@ -669,3 +691,13 @@ select {
       left: auto;
       margin: 1em 0 0 0;
       position: relative; } }
+
+      /* @media screen and (max-width: 1680px) {
+        body {
+          padding: 5em 6em 3.25em 6em; } }
+      @media screen and (max-width: 736px) {
+        body {
+          padding: 4em 3.5em 2em 3.5em; } }
+      @media screen and (max-width: 360px) {
+        body {
+          padding: 3em 2em 1.5em 2em; } } */

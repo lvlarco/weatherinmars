@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Weather by Curiosity</title>
+		<title>Weather in Mars</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/main2.css') }}" />
@@ -18,43 +18,52 @@
 			<main class="main-container">  
 				<div class='left-column'>
 					<div class='location'>
-						<h3>Gale Crater,</h3>
+						<h4>{{rover_location}},</h4>
 						<h1>MARS</h1>
-						<h3><br/>{{terrestrial_date}}</h3>
 					</div>
 					<div class="sol-container">
-						<div class='infoblock-left'>
-							<h3>SOL</h3>
-							<h2>{{sol}}</h2>
-						</div>
+						<h2 class='infoblock-left'>
+							{{sol}}
+							<div class='sol-date-container'>
+								<div class='block-secondary'>SOL</div>
+								<p id='date'>{{terrestrial_date}}</p>
+							</div>
+						</h2>
 					</div>
 				</div>
 				<div class='middle-column'></div>
 				<div class='right-column'>
 					<div class="temperature-container">
 						<div class='temperature_conversion-container'>
-							<a href='/convert-to-f'>F</a> |
-							<a href='/convert-to-c'>C</a>
-							<h1>{{max_temp}}°</h1>
+							<a href='/convert-to-f'> F </a> | <a href='/convert-to-c'> C </a>
 						</div>
+						
+						<h1>{{max_temp}}°</h1>
 						<div class="temperature__atmo-container">
-							<img src="{{ url_for('static', filename='sun.png') }}" class="temperature__icon" alt="">
-							<h5>{{atmo_opacity}}</h5>
-							<div class='infoblock-right'>
-								<h6>{{min_temp}}°</h6>
-								<h7>LOW</h7>
-							</div>
+<!--							<img src="{{ url_for('static', filename='images/sun.png') }}" class="temperature__icon" alt="">-->
+							<img src='static/images/{{atmo_img}}' class="temperature__icon" alt="">
+
+							<h5 class='infoblock-right'>
+								{{min_temp}}°
+								<div class='block-secondary'>LOW</div>
+							</h5>
 						</div>
 					</div>  
+					<div class='season-container'>
+						<h3 class='infoblock-right'>
+							{{season}}
+							<div class='block-secondary'>SEASON</div>
+						</h3>
+					</div>
 					<div class="suntime-container">
-						<div class='infoblock-right'>
-							<h4>{{sunset_time}}</h4>
-							<h5>SUNSET</h5>
-						</div>
-						<div class='infoblock-right'>
-							<h4>{{sunrise_time}}</h4>
-							<h5>SUNRISE</h5>
-						</div>
+						<h3 class='infoblock-right'>
+							{{sunset_time}}
+							<div class='block-secondary'>SUNSET</div>
+						</h3>
+						<h3 class='infoblock-right'>
+							{{sunrise_time}}
+							<div class='block-secondary'>SUNRISE</div>
+						</h3>
 					</div>  
 				</div>
 			</main>
@@ -67,13 +76,13 @@
 					<li><a href="https://lvlarco.github.io/contact" class="icon fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy;WeatherInMars</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>Credits:</li><li>Template by <a href="http://html5up.net">HTML5 UP</a></li><li>Illus by <a href="https://www.linkedin.com/in/alicechen93">Alice Chen</a></li>
 				</ul>
 			</footer>
 
 		<!-- Scripts -->
-			<!-- <script src="{{ url_for('static', filename='main.js') }}"></script> -->
-			<script type="text/javascript" src="/static/main.js?u={{ last_updated }}"></script>
+			<!-- <script src="{{ url_for('static', filename='/js/main.js') }}"></script> -->
+			<script type="text/javascript" src="/static/js/main.js?u={{ last_updated }}"></script>
 
 	</body>
 </html>
