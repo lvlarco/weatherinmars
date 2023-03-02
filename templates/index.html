@@ -15,7 +15,7 @@
 	<body class="is-preload">
 
 		<!-- Main -->
-			<main class="main-container">  
+			<main class="top-container">  
 				<div class='left-column'>
 					<div class='location'>
 						<h4>{{rover_location}},</h4>
@@ -37,16 +37,22 @@
 						<div class='temperature_conversion-container'>
 							<a href='/convert-to-f'> F </a> | <a href='/convert-to-c'> C </a>
 						</div>
-						
-						<h1>{{max_temp}}°</h1>
-						<div class="temperature__atmo-container">
-<!--							<img src="{{ url_for('static', filename='images/sun.png') }}" class="temperature__icon" alt="">-->
-							<img src='static/images/{{atmo_img}}' class="temperature__icon" alt="">
-
-							<h5 class='infoblock-right'>
+						<div class="temperature_daynight">
+							<h1 class="infoblock-right">
+								{{max_temp}}°
+								<div class='block-secondary'>DAY</div>
+							</h1>
+							<h4 class='infoblock-right'>
 								{{min_temp}}°
-								<div class='block-secondary'>LOW</div>
-							</h5>
+								<div class='block-secondary'>NIGHT</div>
+							</h4>
+						</div>
+						<div class="temperature__atmo-container">
+							<h3 class="infoblock-center">
+								<div class='block-secondary'>SUNNY</div>
+								<img src='static/images/{{atmo_img}}' class="temperature__icon" alt="">
+								<!--						<img src="{{ url_for('static', filename='images/sun.png') }}" class="temperature__icon" alt="">-->
+							</3>
 						</div>
 					</div>  
 					<div class='season-container'>
@@ -81,8 +87,8 @@
 			</footer>
 
 		<!-- Scripts -->
-			<!-- <script src="{{ url_for('static', filename='/js/main.js') }}"></script> -->
-			<script type="text/javascript" src="/static/js/main.js?u={{ last_updated }}"></script>
+			<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+			<!-- <script type="text/javascript" src="/static/js/main.js?u={{ last_updated }}"></script> -->
 
 	</body>
 </html>

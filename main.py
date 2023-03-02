@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template
 from reports import SolReport
 from resources.mappers import ATMO_IMG, ROVER_LOC
-import weather_run as wr
+from weather_run import request_latest_report
 import os
 
 app = Flask(__name__)
@@ -12,7 +12,7 @@ maas2_apollorion_url = 'https://api.maas2.apollorion.com/'  # Info: https://prog
 
 rover = 'curiosity'
 api_source = 'maas2'
-sol, report = wr.request_latest_report(rover, api_source)
+sol, report = request_latest_report(rover, api_source)
 sr = SolReport(sol, report, rover)
 rep_dict = sr.create_report_dict()
 sol_dict = rep_dict.get(sol)

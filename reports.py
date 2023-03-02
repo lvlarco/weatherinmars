@@ -77,7 +77,10 @@ class SolReport(object):
             return ''
         else:
             if self.rover == 'curiosity':
-                d = datetime.strptime(self.terretrial_date, '%Y-%m-%dT%H:%M:%S.000Z')
+                try:
+                    d = datetime.strptime(self.terretrial_date, '%Y-%m-%dT%H:%M:%S.000Z')
+                except ValueError:
+                    d = datetime.strptime(self.terretrial_date, '%Y-%m-%d')
                 return datetime.strftime(d, '%d %b %y')
             else:
                 d = datetime.strptime(self.terretrial_date, '%Y-%m-%d')

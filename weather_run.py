@@ -25,7 +25,6 @@ source_dict = {'curiosity_maas2': maas2_apollorion_url,
 
 def request_latest_report(rover='curiosity', api='maas2'):
     """Returns the Sol and dictionary data from the specified source url. Defaults to curiosity_maas2
-
     :param rover: name of rover/lander. Supports 'curiosity' or 'perseverance'
     :type rover: str
     :param api: API source. Supports 'cab', 'maas2' for Curiosity, and 'nasa' for Perseverance
@@ -52,7 +51,6 @@ def request_latest_report(rover='curiosity', api='maas2'):
 
 def request_sol_report(sol):
     """Returns a report for a specific Sol. Only works for MAAS2 API
-
     :param sol: Sol value to be extracted
     :type sol: str
     """
@@ -62,11 +60,11 @@ def request_sol_report(sol):
         print(type(e), e)
 
 
-if __name__ == '__main__':
-    sol, report = request_latest_report(rover=rover, api=api)
-    sr = SolReport(sol, report, rover)
-    metadata_df = sr.create_report_table()
-    print(metadata_df)
+# if __name__ == '__main__':
+#     sol, report = request_latest_report(rover=rover, api=api)
+#     sr = SolReport(sol, report, rover)
+#     metadata_df = sr.create_report_table()
+#     print(metadata_df)
     # sr.save_report(sr.create_report_dict(), file_type='json')
     # root = tk.Tk()
 #     WeatherDashboard(root, metadata_df)
